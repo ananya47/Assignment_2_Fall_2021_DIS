@@ -29,7 +29,7 @@ namespace DIS_Assignment_2_Fall_2021
             string[] words1 = { "bella", "label", "roller" };
             List<string> commonWords=CommonChars(words1);
             Console.WriteLine("Common characters in all the strigs are:");
-            for(int i=0;i<commonWords.Length;i++)
+            for(int i=0;i<commonWords.Count;i++)
             {
                 Console.Write(commonWords[i] + "\t");
             }
