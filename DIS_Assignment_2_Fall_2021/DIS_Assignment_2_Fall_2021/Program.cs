@@ -27,7 +27,7 @@ namespace DIS_Assignment_2_Fall_2021
             //Question3
             Console.WriteLine("Question 3");
             string[] words1 = { "bella", "label", "roller" };
-            char[] commonWords=CommonChars(words1);
+            List<string> commonWords=CommonChars(words1);
             Console.WriteLine("Common characters in all the strigs are:");
             for(int i=0;i<commonWords.Length;i++)
             {
@@ -192,11 +192,11 @@ namespace DIS_Assignment_2_Fall_2021
         /// </summary>
 */
 
-        private static char[] CommonChars(string[] words)
+        private static List<string> CommonChars(string[] words)
         {
             try
             {
-                char[] commonwords = { };
+                List<string> commonwords= new List<string>();
                 //write your code here.
 
                 return commonwords;
