@@ -287,6 +287,7 @@ namespace DIS_Assignment_2_Fall_2021
             try
             {
                 //write your code here.
+                //Print the answer to the console you dont need to return anything.
 
             }
             catch (Exception)
