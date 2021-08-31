@@ -363,7 +363,7 @@ namespace DIS_Assignment_2_Fall_2021
             try
             {
                 //write your code here.
-                int[] ans = {2,3,4,5};
+                int[] ans = {};
                 return ans;
             }
             catch (Exception)
