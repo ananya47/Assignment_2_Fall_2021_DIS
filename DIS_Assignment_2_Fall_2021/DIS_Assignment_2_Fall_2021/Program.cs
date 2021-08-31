@@ -121,7 +121,7 @@ namespace DIS_Assignment_2_Fall_2021
 
         */
 
-        private static int LargestAltitude(int[] gain)
+        public static int LargestAltitude(int[] gain)
         {
             try
             {
@@ -192,7 +192,7 @@ namespace DIS_Assignment_2_Fall_2021
         
         */
 
-        private static List<string> CommonChars(string[] words)
+        public static List<string> CommonChars(string[] words)
         {
             try
             {
@@ -224,7 +224,7 @@ namespace DIS_Assignment_2_Fall_2021
        
          */
 
-        private static bool UniqueOccurrences(int[] arr)
+        public static bool UniqueOccurrences(int[] arr)
         {
             try
             {
@@ -291,7 +291,7 @@ namespace DIS_Assignment_2_Fall_2021
 
         */
 
-        private static void targetSum(int[] nums, int target)
+        public static void targetSum(int[] nums, int target)
         {
             try
             {
@@ -358,7 +358,7 @@ namespace DIS_Assignment_2_Fall_2021
 
         */
 
-        private static int[] AnagramMappings(int[] nums1, int[] nums2)
+        public static int[] AnagramMappings(int[] nums1, int[] nums2)
         {
             try
             {
@@ -391,7 +391,7 @@ namespace DIS_Assignment_2_Fall_2021
 
         */
 
-        private static int MaximumSum(int[] arr)
+        public static int MaximumSum(int[] arr)
         {
             try
             {
@@ -423,7 +423,7 @@ namespace DIS_Assignment_2_Fall_2021
 
         */
 
-        private static int minSubArrayLen(int target_subarray_sum, int[] arr10)
+        public static int minSubArrayLen(int target_subarray_sum, int[] arr10)
         {
             try
             {
