@@ -305,7 +305,7 @@ namespace DIS_Assignment_2_Fall_2021
             try
             {
                 //write your code here.
-                //print the answer in the function itself.s
+                //print the answer in the function itself.
 
             }
             catch (Exception)
