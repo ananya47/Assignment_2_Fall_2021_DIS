@@ -1,4 +1,3 @@
-
 using System;
 using System.Collections.Generic;
 
@@ -28,9 +27,9 @@ namespace DIS_Assignment_2_Fall_2021
             //Question3:
             Console.WriteLine("Question 3");
             string[] words1 = { "bella", "label", "roller" };
-            List<string> commonWords=CommonChars(words1);
+            List<string> commonWords = CommonChars(words1);
             Console.WriteLine("Common characters in all the strigs are:");
-            for(int i=0;i<commonWords.Count;i++)
+            for (int i = 0; i < commonWords.Count; i++)
             {
                 Console.Write(commonWords[i] + "\t");
             }
@@ -40,10 +39,10 @@ namespace DIS_Assignment_2_Fall_2021
             Console.WriteLine("Question 4");
             int[] arr1 = { 1, 2, 2, 1, 1, 3 };
             bool unq = UniqueOccurrences(arr1);
-            if(unq)
-            Console.WriteLine("Number of Occurences of each element are same");
+            if (unq)
+                Console.WriteLine("Number of Occurences of each element are same");
             else
-            Console.WriteLine("Number of Occurences of each element are not same");
+                Console.WriteLine("Number of Occurences of each element are not same");
 
             Console.WriteLine();
 
@@ -52,12 +51,12 @@ namespace DIS_Assignment_2_Fall_2021
             List<List<string>> items = new List<List<string>>();
             items.Add(new List<string>() { "phone", "blue", "pixel" });
             items.Add(new List<string>() { "computer", "silver", "lenovo" });
-            items.Add(new List<string>() { "phone","gold","iphone" });
+            items.Add(new List<string>() { "phone", "gold", "iphone" });
 
             string ruleKey = "color";
             string ruleValue = "silver";
 
-            int matches = CountMatches(items,ruleKey,ruleValue);
+            int matches = CountMatches(items, ruleKey, ruleValue);
             Console.WriteLine("Number of matches for the given rule :{0}", matches);
 
             Console.WriteLine();
@@ -81,10 +80,10 @@ namespace DIS_Assignment_2_Fall_2021
             //Question 8:
             Console.WriteLine("Question 8");
             int[] num1 = { 12, 28, 46, 32, 50 };
-            int[] num2 = {50, 12, 32, 46, 28 };
-            int[] indexes= AnagramMappings(num1,num2);
+            int[] num2 = { 50, 12, 32, 46, 28 };
+            int[] indexes = AnagramMappings(num1, num2);
             Console.WriteLine("Mapping of the elements are");
-            for(int i=0;i<indexes.Length;i++)
+            for (int i = 0; i < indexes.Length; i++)
             {
                 Console.Write(indexes[i] + "\t");
             }
@@ -112,8 +111,7 @@ namespace DIS_Assignment_2_Fall_2021
         Question 1:
 
         There is a biker going on a road trip. The road trip consists of n + 1 points at different altitudes. The biker starts his trip on point 0 with altitude equal 0.
-        You are given an integer array gain of length n where gain[i] is the net gain in altitude between points i and i + 1 for all (0 <= i < n). Return the highest altitude of a point.
-
+        You are given an integer array gain of length n where gain[i] is the net gain in altitude between points i and i + 1  for all (0 <= i < n). Return the highest altitude of a point.
         Example 1:
         Input: gain = [-5,1,5,0,-7]
         Output: 1
@@ -136,23 +134,24 @@ namespace DIS_Assignment_2_Fall_2021
         }
 
         /*
-         
-        Question 2:
         
-        Given a sorted array of distinct integers and a target value, return the index if the target is found.If not, return the index where it would be if it were inserted in order.
-        Note: You must write an algorithm with O(log n) runtime complexity.
+        Question 2:
+
+        Given a sorted array of distinct integers and a target value, return the index if the target is found. If not, return the index where it would be if it were inserted in order.
+        Note: The algorithm should have run time complexity of O (log n).
+        Hint: Use binary search
+
         Example 1:
-        Input: nums = [1, 3, 5, 6], target = 5
+        Input: nums = [1,3,5,6], target = 5
         Output: 2
+
         Example 2:
-        Input: nums = [1, 3, 5, 6], target = 2
+        Input: nums = [1,3,5,6], target = 2
         Output: 1
+
         Example 3:
-        Input: nums = [1, 3, 5, 6], target = 7
+        Input: nums = [1,3,5,6], target = 7
         Output: 4
-        Example 4:
-        Input: nums = [1, 3, 5, 6], target = 0
-        Output: 0
 
         */
 
@@ -173,22 +172,15 @@ namespace DIS_Assignment_2_Fall_2021
          
         Question 3
        
-        Given an array word of strings made only from lowercase letters, return a list of all characters that show up in all strings within the list(including duplicates).  For example, if a character occurs 3 times in all strings but not 4 times, you need to include that character three times in the final answer.
+        Given an array words of strings made only from lowercase letters, return a list of all characters that show up in all strings in words (including duplicates).  For example, if a character occurs 3 times in all strings but not 4 times, you need to include that character three times in the final answer.
         You may return the answer in any order.
-
         Example 1:
         Input: ["bella","label","roller"]
         Output: ["e","l","l"]
-
-
         Example 2:
         Input: ["cool","lock","cook"]
         Output: ["c","o"]
 
-        Note:
-        1.	1 <= words.length <= 100
-        2.	1 <= words[i].length <= 100
-        3.	words[i] consists of lowercase English letters.
         
         */
 
@@ -196,7 +188,7 @@ namespace DIS_Assignment_2_Fall_2021
         {
             try
             {
-                List<string> commonwords= new List<string>();
+                List<string> commonwords = new List<string>();
                 //write your code here.
 
                 return commonwords;
@@ -209,8 +201,8 @@ namespace DIS_Assignment_2_Fall_2021
         }
 
         /*
-        
         Question 4:
+
         Given an array of integers arr, write a function that returns true if and only if the number of occurrences of each value in the array is unique.
 
         Example 1:
@@ -221,6 +213,7 @@ namespace DIS_Assignment_2_Fall_2021
         Example 2:
         Input: arr = [1,2]
         Output: false
+
        
          */
 
@@ -241,25 +234,28 @@ namespace DIS_Assignment_2_Fall_2021
 
         /*
         
-        Question 5
-        
-        You are given an array items, where each items[i] = [typei, colori, namei] describes the type, color, and name of the ith item. You are also given a rule represented by two strings, ruleKey and ruleValue.
+        Question 5:
+
+        You are given an array items, where each items[i] = [type, color, name]  describes the type, color, and name of the ith item. You are also given a rule represented by two strings, ruleKey and ruleValue.
         The ith item is said to match the rule if one of the following is true:
-        •	ruleKey == "type" and ruleValue == typei.
-        •	ruleKey == "color" and ruleValue == colori.
-        •	ruleKey == "name" and ruleValue == namei.
+        •	ruleKey == "type" and ruleValue == type.
+        •	ruleKey == "color" and ruleValue == color.
+        •	ruleKey == "name" and ruleValue == name.
+
         Return the number of items that match the given rule.
 
         Example 1:
-        Input: items = [["phone","blue","pixel"],["computer","silver","lenovo"],["phone","gold","iphone"]], ruleKey = "color", ruleValue = "silver"
+        Input:  items = [["phone","blue","pixel"],["computer","silver","lenovo"],["phone","gold","iphone"]],  ruleKey = "color",  ruleValue = "silver".
         Output: 1
         Explanation: There is only one item matching the given rule, which is ["computer","silver","lenovo"].
 
         Example 2:
-        Input: items = [["phone","blue","pixel"],["computer","silver","phone"],["phone","gold","iphone"]], ruleKey = "type", ruleValue = "phone"
+        Input: items = [["phone","blue","pixel"],["computer","silver","phone"],["phone","gold","iphone"]], ruleKey = "type",  ruleValue = "phone"
         Output: 2
-        Explanation: There are only two items matching the given rule, which are ["phone","blue","pixel"] and ["phone","gold","iphone"]. Note that the item ["computer","silver","phone"] does not match.
-       
+        Explanation: There are only two items matching the given rule, which are ["phone","blue","pixel"]  and ["phone","gold","iphone"]. 
+
+        Note that the item ["computer","silver","phone"] does not match.
+
         */
 
         public static int CountMatches(List<List<string>> items, string ruleKey, string ruleValue)
@@ -281,13 +277,26 @@ namespace DIS_Assignment_2_Fall_2021
         Question 6:
         
         Given an array of integers numbers that is already sorted in non-decreasing order, find two numbers such that they add up to a specific target number.
-        Print the indices of the two numbers (1-indexed) as an integer array answer of size 2, where 1 <= answer[0] < answer[1] <= numbers.Length.
-        You may not use the same element twice, there will be only one solution for a given array
+        Print the indices of the two numbers (1-indexed) as an integer array answer of size 2, where 1 <= answer[0] < answer[1] <= numbers. Length.
+        You may not use the same element twice, there will be only one solution for a given array.
+
+        Note: Solve it in O(n) and O(1) space complexity.
+
+        Hint: Use the fact that array is sorted in ascending order and there exists only one solution.
+        Typically, in these cases it’s useful to use pointers tracking the two ends of the array.
 
         Example 1:
         Input: numbers = [2,7,11,15], target = 9
         Output: [1,2]
         Explanation: The sum of 2 and 7 is 9. Therefore index1 = 1, index2 = 2.
+
+        Example 2:
+        Input: numbers = [2,3,4], target = 6
+        Output: [1,3]
+
+        Example 3:
+        Input: numbers = [-1,0], target = -1
+        Output: [1,2]
 
         */
 
@@ -296,6 +305,7 @@ namespace DIS_Assignment_2_Fall_2021
             try
             {
                 //write your code here.
+                //print the answer in the function itself.s
 
             }
             catch (Exception)
@@ -308,14 +318,17 @@ namespace DIS_Assignment_2_Fall_2021
         /*
          
         Question 7:
-        You are given a string allowed consisting of distinct characters and an array of strings words. A string is consistent
-        if all characters in the string appear in the string allowed.
+
+        You are given a string allowed consisting of distinct characters and an array of strings words. A string is consistent if every character in words[i] appears in the string allowed.
         Return the number of consistent strings in the array words.
- 
+
+        Note: The algorithm should have run time complexity of O(n).
+        Hint: Use Dictionaries. 
+
         Example 1:
         Input: allowed = "ab", words = ["ad","bd","aaab","baa","badab"]
         Output: 2
-        Explanation: Strings "aaab" and "baa" are consistent since they only contain characters 'a' and 'b'.
+        Explanation: Strings "aaab" and "baa" are consistent since they only contain characters 'a' and 'b'. string “bd” is not consistent since ‘d’ is not in string allowed.
 
         Example 2:
         Input: allowed = "abc", words = ["a","b","c","ab","ac","bc","abc"]
@@ -339,22 +352,18 @@ namespace DIS_Assignment_2_Fall_2021
         }
 
         /*
-
         Question 8:
 
         You are given two integer arrays nums1 and nums2 where nums2 is an anagram of nums1. Both arrays may contain duplicates.
 
-        Return an index mapping array mapping from nums1 to nums2 where mapping[i] = j means the ith element in nums1 appears in nums2 at index j. If there are multiple answers, return any of them.
-        An array a is an anagram of an array b means b is made by randomizing the order of the elements in a.
+        Return an index mapping array mapping from nums1 to nums2 where mapping[i] = j indicates that  the ith element in nums1 appears in nums2 at index j. If there are multiple answers, return any of them.
+        An array a is an anagram of array b if b is made by randomizing the order of the elements in a.
+
  
         Example 1:
         Input: nums1 = [12,28,46,32,50], nums2 = [50,12,32,46,28]
         Output: [1,4,3,2,0]
         Explanation: As mapping[0] = 1 because the 0th element of nums1 appears at nums2[1], and mapping[1] = 4 because the 1st element of nums1 appears at nums2[4], and so on.
-
-        Example 2:
-        Input: nums1 = [84,46], nums2 = [84,46]
-        Output: [0,1]
 
         */
 
@@ -363,7 +372,7 @@ namespace DIS_Assignment_2_Fall_2021
             try
             {
                 //write your code here.
-                int[] ans = {};
+                int[] ans = { };
                 return ans;
             }
             catch (Exception)
@@ -375,19 +384,17 @@ namespace DIS_Assignment_2_Fall_2021
         
         Question 9:
 
-        Given an integer array nums, find the contiguous subarray(containing at least one number) which has the largest sum and return its sum
+        Given an integer array nums, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum.
+
+        Note: Time Complexity should be O(n).
+        Hint: Keep track of maximum sum as you move forward.
         Example 1:
         Input: nums = [-2,1,-3,4,-1,2,1,-5,4]
         Output: 6
         Explanation: [4,-1,2,1] has the largest sum = 6.
-
         Example 2:
         Input: nums = [1]
         Output: 1
-
-        Example 3:
-        Input: nums = [5,4,-1,7,8]
-        Output: 23
 
         */
 
@@ -406,20 +413,25 @@ namespace DIS_Assignment_2_Fall_2021
         }
 
         /*
+         
         Question 10:
 
-        Given an array of positive integers nums and a positive integer target, return the minimal length of a contiguous subarray
-        [numsl, numsl + 1, ..., numsr - 1, numsr] of which the sum is greater than or equal to target.If there is no such subarray
-        return 0 instead.
+        Given an array of positive integers nums and a positive integer target, return the minimal length of a contiguous subarray [nums[l], nums[l+1], ..., nums[r-1], nums[r]] of which the sum is greater than or equal to target. If there is no such subarray, return 0 instead.
 
-         Example 1:
-         Input: target = 7, nums = [2, 3, 1, 2, 4, 3]
-         Output: 2
-         Explanation: The subarray [4,3] has the minimal length under the problem constraint.
 
-         Example 2:
-         Input: target = 4, nums = [1, 4, 4]
-         Output: 1
+        Note: Try to solve it in O(n) time.
+
+        Hint: Try to create a window and track the sum you have in the window.
+
+        Example 1:
+        Input: target = 7, nums = [2,3,1,2,4,3]
+        Output: 2
+        Explanation: The subarray [4,3] has the minimal length under the problem constraint.
+
+
+        Example 2:
+        Input: target = 4, nums = [1,4,4]
+        Output: 1
 
         */
 
