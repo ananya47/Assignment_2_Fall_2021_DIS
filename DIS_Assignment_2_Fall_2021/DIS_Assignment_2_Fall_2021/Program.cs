@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace DIS_Assignment_2_Fall_2021
 {
@@ -40,9 +41,9 @@ namespace DIS_Assignment_2_Fall_2021
             int[] arr1 = { 1, 2, 2, 1, 1, 3 };
             bool unq = UniqueOccurrences(arr1);
             if (unq)
-                Console.WriteLine("Number of Occurences of each element are same");
+                Console.WriteLine("Number of Occurences of each element are unique");
             else
-                Console.WriteLine("Number of Occurences of each element are not same");
+                Console.WriteLine("Number of Occurences of each element are not unique");
 
             Console.WriteLine();
 
@@ -123,8 +124,20 @@ namespace DIS_Assignment_2_Fall_2021
         {
             try
             {
-                //write your code here.
-                return 0;
+                int l = gain.Length, max = 0;
+
+                int[] alt = new int[l + 1];//Creating array for saving altitude
+                alt[0] = 0;//Adding 1st element as 0 as biker starts his trip on point 0 with altitude equal 0
+                for (int i = 0; i < l; i++)
+                {
+
+                    alt[i + 1] = gain[i] + alt[i];//Adding gain with the previous altitude to get next altitude in alt array
+                    max = Math.Max(alt[i], max);//finding maximum altitiude and saving in max
+
+                }
+                alt[l] = gain[l - 1] + alt[l - 1];//Adding the last gain to get last value of altitude which was not covered in the last for loop
+                return Math.Max(alt[l], max); //Finding final largest altitude
+
             }
             catch (Exception)
             {
@@ -159,8 +172,34 @@ namespace DIS_Assignment_2_Fall_2021
         {
             try
             {
-                //Write your Code here.
-                return -1;
+
+                // checking for corner cases 
+                if (nums == default(int[]) || nums.Length == 0 || target == 0)
+                    return 0;
+               
+                // Implemented binary search to find the target element index
+                // initializing left,pivot,right to implement binary search
+                // Since the given array is sorted, this method will easily divide the array by comparing the target with element at pivot index
+                int left = 0, pivot, right = nums.Length - 1;
+
+                while (left <= right)
+                {
+                    pivot = left + (right - left) / 2;
+
+                    if (target == nums[pivot])
+                        return pivot;// found target here
+
+                    else if (target < nums[pivot])
+                    {
+                        right = pivot - 1;
+                    }
+                    else
+                        left = pivot + 1;
+
+                }
+                return left;
+
+
             }
             catch (Exception)
             {
@@ -188,11 +227,31 @@ namespace DIS_Assignment_2_Fall_2021
         {
             try
             {
-                List<string> commonwords = new List<string>();
-                //write your code here.
+                List<string> commonwords = new List<string>();//Creating list to save common characters
+                int[,] chars = new int[words.Length, 26];
+
+
+                for (int i = 0; i < words.Length; i++)//Initializing the chars 2*2 array with the count of characters in words using the difference found in ascii codes
+                    foreach (var item in words[i])
+                        chars[i, item - 'a']++;
+
+                for (int i = 0; i < 26; i++)
+                {
+                    int min = Int32.MaxValue;
+
+                    for (int j = 0; j < words.Length; j++)
+                        if (chars[j, i] < min)
+                            min = chars[j, i]; //Finding the characters which are common in all words 
+
+                    if (min > 0)
+                        for (int j = 0; j < min; j++)
+                            commonwords.Add(((char)(i + 'a')).ToString());//Adding those common characters in commonwords list that we created above by converting the ascii code to character through explicit datatype conversion
+                }
 
                 return commonwords;
+
             }
+
             catch (Exception)
             {
 
@@ -221,9 +280,22 @@ namespace DIS_Assignment_2_Fall_2021
         {
             try
             {
-                //write your code here.
-                return false;
-            }
+                // Using dictonary to save the occurences of each element
+                Dictionary<int, int> dict = new Dictionary<int, int>();
+
+                for (int i = 0; i < arr.Length; i++)
+                {
+                    if (!dict.ContainsKey(arr[i]))
+                        dict.Add(arr[i], 1);
+                    else
+                    {
+                        dict[arr[i]] += 1;
+                    }
+
+                }
+
+                return dict.Values.Distinct().Count() == dict.Values.Count();// to check uniqueness of occurences and returning true if occurence is unique
+            } 
             catch (Exception)
             {
 
@@ -262,8 +334,24 @@ namespace DIS_Assignment_2_Fall_2021
         {
             try
             {
-                //write your code here.
-                return 0;
+                // index is to get the index of ruleKey
+                int index = 0;
+                int c = 0;// c is used to hold the output to be returned
+
+                if (ruleKey == "type")
+                    index = 0;
+                else if (ruleKey == "color")
+                    index = 1;
+                else if (ruleKey == "name")
+                    index = 2;
+
+                // iterating through all the elements and incrementing the count if ruleValue is found
+                foreach (var i in items)
+                {
+                    if (i[index] == ruleValue)
+                        c++;
+                }
+                return c;// returning count
             }
             catch (Exception)
             {
@@ -304,8 +392,31 @@ namespace DIS_Assignment_2_Fall_2021
         {
             try
             {
-                //write your code here.
+                int left = 0;
+                int right = nums.Length - 1;
+                int countSum = 0;
+                //Checking in the array to find the elements index which sum upto target using left and right pointers
+                while (left < right)
+                {
+                    countSum = nums[left] + nums[right];
+
+                    if (countSum == target)
+                    {
+                        Console.WriteLine("[" + left + "," + right + "]");
+                    }
+                    //Moving right pointer towards left if countsum>target and moving left pointer towards right if countsum<target
+                    if (countSum > target)
+                    {
+                        right -= 1;
+                    }
+                    else
+                    {
+                        left += 1;
+                    }
+
+                }
                 //print the answer in the function itself.
+
 
             }
             catch (Exception)
@@ -341,8 +452,41 @@ namespace DIS_Assignment_2_Fall_2021
         {
             try
             {
-                //write your code here.
-                return 0;
+                //dic dictonary is to keep track of occurance of each character in allowed string
+                Dictionary<char, int> dic = new Dictionary<char, int>();
+                for (int i = 0; i < allowed.Length; i++)
+                {
+                    if (!dic.ContainsKey(allowed[i]))
+                    {
+                        dic[allowed[i]] = 1;
+                    }
+                    else
+                    {
+                        dic[allowed[i]] += 1;
+                    }
+                }
+
+                //Checking the words array to find the consistent strings in the words
+                //consistentWords is used to count the consistent words in the array 
+                int cw = 0;
+                for (int i = 0; i < words.Length; i++)
+                {
+                    string currentWord = words[i];
+                    bool isConsistentWord = true;
+                    for (int j = 0; j < currentWord.Length; j++)
+                    {
+                        if (!dic.ContainsKey(currentWord[j]))
+                        {
+                            isConsistentWord = false;
+                            break;
+                        }
+                    }
+
+                    if (isConsistentWord)
+                        cw++;
+                }
+
+                return cw;//returning count of consistent words
             }
             catch (Exception)
             {
@@ -371,9 +515,20 @@ namespace DIS_Assignment_2_Fall_2021
         {
             try
             {
-                //write your code here.
-                int[] ans = { };
-                return ans;
+                Dictionary<int, int> dict1 = new Dictionary<int, int>();
+                int len = nums2.Length;
+
+                //initializing the dictionary with nums2 array with element as key and index as value
+                for (int i = 0; i < len; i++)
+                    dict1[nums2[i]] = i;
+
+               
+                int[] result = new int[len];
+                
+                for (int i = 0; i < len; i++)
+                    result[i] = dict1[nums1[i]]; // result is used to hold the final output
+
+                return result;
             }
             catch (Exception)
             {
@@ -402,8 +557,21 @@ namespace DIS_Assignment_2_Fall_2021
         {
             try
             {
-                //write your code here.
-                return 0;
+                int max = arr[0];
+                int sum = 0, l = arr.Length;
+
+                if (l == 1) return arr[0];//checking corner case
+
+                //iterating through the array and finding the maximum sum and saving in max variable
+                for (int i = 0; i < l; i++)
+                {
+                    sum = sum + arr[i];
+                    if (arr[i] > sum) sum = arr[i];
+
+                    if (sum > max) max = sum;
+                }
+                return max;// returning maximum value
+
             }
             catch (Exception)
             {
@@ -439,8 +607,43 @@ namespace DIS_Assignment_2_Fall_2021
         {
             try
             {
-                //write your code here.
-                return 0;
+                //checking for corner case
+                if (arr10.Length == 0)
+                {
+                    return 0;
+                }
+
+                int result = int.MaxValue;
+                int left = 0;
+                int sum = arr10[0];
+                int right = 0;
+
+                //iterating through each element of the array
+                while (left != arr10.Length)
+                {
+                    //for each element checking sum with target_subarray_sum and updating right and left accordingly
+                    if (sum < target_subarray_sum)
+                    {
+                        if (right < arr10.Length - 1)
+                        {
+                            right++;
+                            sum += arr10[right];
+                        }
+                        else
+                        {
+                            sum -= arr10[left];
+                            left++;
+                        }
+
+                        continue;
+                    }
+                    //updating result after each iteration for array element
+                    result = Math.Min(right - left + 1, result);
+                    sum -= arr10[left];
+                    left++;
+                }
+
+                return result!= int.MaxValue ? result : 0;
 
             }
             catch (Exception)
@@ -451,3 +654,9 @@ namespace DIS_Assignment_2_Fall_2021
         }
     }
 }
+/*I learned from this assignment how to use for loop, lists, strings, array,dictionary,binary search and various library funtions
+like Length,MaxValue,ContainsKey.
+I also learned how to restrict the complexity of a code to make it more optimized.
+Recommendation- It would be great if we receive more hands on experience regarding C# code and also
+if the subject is made more flexible to use other languages as well.
+*/

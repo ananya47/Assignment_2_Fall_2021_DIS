@@ -1,29 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "/Users/nagababuveganti/Documents/DIS Fall 2021/Assignmnet 2/DIS_Assignment_2_Fall_2021/DIS_Assignment_2_Fall_2021/DIS_Assignment_2_Fall_2021.csproj": {}
+    "C:\\Users\\hp\\Source\\Repos\\Assignment_2_Fall_2021_DIS\\DIS_Assignment_2_Fall_2021\\DIS_Assignment_2_Fall_2021\\DIS_Assignment_2_Fall_2021.csproj": {}
   },
   "projects": {
-    "/Users/nagababuveganti/Documents/DIS Fall 2021/Assignmnet 2/DIS_Assignment_2_Fall_2021/DIS_Assignment_2_Fall_2021/DIS_Assignment_2_Fall_2021.csproj": {
+    "C:\\Users\\hp\\Source\\Repos\\Assignment_2_Fall_2021_DIS\\DIS_Assignment_2_Fall_2021\\DIS_Assignment_2_Fall_2021\\DIS_Assignment_2_Fall_2021.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/nagababuveganti/Documents/DIS Fall 2021/Assignmnet 2/DIS_Assignment_2_Fall_2021/DIS_Assignment_2_Fall_2021/DIS_Assignment_2_Fall_2021.csproj",
+        "projectUniqueName": "C:\\Users\\hp\\Source\\Repos\\Assignment_2_Fall_2021_DIS\\DIS_Assignment_2_Fall_2021\\DIS_Assignment_2_Fall_2021\\DIS_Assignment_2_Fall_2021.csproj",
         "projectName": "DIS_Assignment_2_Fall_2021",
-        "projectPath": "/Users/nagababuveganti/Documents/DIS Fall 2021/Assignmnet 2/DIS_Assignment_2_Fall_2021/DIS_Assignment_2_Fall_2021/DIS_Assignment_2_Fall_2021.csproj",
-        "packagesPath": "/Users/nagababuveganti/.nuget/packages/",
-        "outputPath": "/Users/nagababuveganti/Documents/DIS Fall 2021/Assignmnet 2/DIS_Assignment_2_Fall_2021/DIS_Assignment_2_Fall_2021/obj/",
+        "projectPath": "C:\\Users\\hp\\Source\\Repos\\Assignment_2_Fall_2021_DIS\\DIS_Assignment_2_Fall_2021\\DIS_Assignment_2_Fall_2021\\DIS_Assignment_2_Fall_2021.csproj",
+        "packagesPath": "C:\\Users\\hp\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\hp\\Source\\Repos\\Assignment_2_Fall_2021_DIS\\DIS_Assignment_2_Fall_2021\\DIS_Assignment_2_Fall_2021\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "/Users/nagababuveganti/.config/NuGet/NuGet.Config"
+          "C:\\Users\\hp\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
-          "https://api.nuget.org/v3/index.json": {}
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {}
         },
         "frameworks": {
           "net5.0": {
@@ -55,7 +53,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.400/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }
